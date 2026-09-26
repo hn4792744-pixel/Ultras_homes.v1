@@ -1,4 +1,4 @@
-name: Build
+name: Build ULTRAS_HOMES
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
           # generate the wrapper jar), so a specific Gradle version is installed and used directly.
           gradle-version: '8.10'
 
-      - name: Build
+      - name: Build ULTRAS_HOMES
         run: gradle build --no-daemon
 
       - name: Upload artifact
