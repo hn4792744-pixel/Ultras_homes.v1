@@ -1,0 +1,67 @@
+general:
+  no-permission: "<red>You do not have permission to do that."
+  player-only: "<red>This command can only be used by a player."
+  unknown-player: "<red>No data found for <white>{player}</white>."
+  invalid-usage: "<red>Usage: <white>{usage}</white>"
+  world-disabled: "<red>The Homes system is disabled in this world."
+  reload-done: "<green>Configuration, messages and GUI files reloaded."
+
+home:
+  saved: "{prefix}<green>Home <white>{home}</white> saved successfully. <gray>({current}/{limit})"
+  deleted: "{prefix}<yellow>Home <white>{home}</white> deleted."
+  not-found: "{prefix}<red>Home <white>{home}</white> not found."
+  no-homes: "{prefix}<gray>You have no saved homes yet."
+  limit-reached: "{prefix}<red>You reached your home limit. <white>({current}/{limit})"
+  locked: "{prefix}<red>This home slot is locked. Required limit: <white>{required_limit}"
+  reset-confirm: "{prefix}<red>This will delete ALL your homes. <click:run_command:'/home rest confirm'><hover:show_text:'<gray>Click to confirm'><green><bold>[CONFIRM]</bold></green></hover></click> <gray>(expires in {seconds}s)"
+  reset-none-pending: "{prefix}<red>Nothing to confirm (expired). Run <white>/home rest</white> again."
+  reset-done: "{prefix}<yellow>All your homes were deleted."
+
+teleport:
+  starting: "{prefix}<gray>Teleporting to <white>{home}</white> in <yellow>{delay}s</yellow>... <dark_gray>(don't move)"
+  countdown: "<yellow>{seconds}"
+  success: "{prefix}<green>Teleported to <white>{home}</white>."
+  cancelled-move: "{prefix}<red>Teleport cancelled - you moved."
+  cancelled-damage: "{prefix}<red>Teleport cancelled - you took damage."
+  cancelled-death: "{prefix}<red>Teleport cancelled."
+  cancelled-other: "{prefix}<red>Teleport cancelled."
+  already-pending: "{prefix}<red>You already have a teleport in progress."
+  cooldown: "{prefix}<red>Wait <white>{remaining}</white> before teleporting again."
+  invalid-location: "{prefix}<red>This home's location is no longer valid."
+  world-blocked: "{prefix}<red>You cannot teleport to a home in a disabled world."
+
+gui:
+  save-header: "<gray>Available Home"
+  manage-header: "<gray>Manage Home"
+  delete-confirm: "{prefix}<yellow>Click delete again to confirm."
+  admin-save-disabled: "{prefix}<red>Admins cannot save a home for a player from this menu."
+
+admin:
+  target-required: "<red>Usage: /home_admin <add|set|rest|tp|reload> <player|all> [amount]"
+  add-done: "{prefix}<green>{target}'s home limit increased by <white>{amount}</white>: <white>{old} → {new}</white>"
+  add-done-all: "{prefix}<green>Increased the home limit of <white>{count}</white> players by <white>{amount}</white>."
+  set-done: "{prefix}<green>{target}'s home limit set to <white>{new}</white> <gray>(was {old})"
+  set-done-all: "{prefix}<green>Set the home limit of <white>{count}</white> players to <white>{new}</white>."
+  rest-done: "{prefix}<yellow>{target}'s home limit was reset to the default <white>({default})</white>."
+  rest-done-all: "{prefix}<yellow>Reset the home limit of <white>{count}</white> players to the default."
+  rest-homes-deleted: "{prefix}<yellow>{target}'s homes were also deleted."
+  tp-done: "{prefix}<green>Teleported to {target}'s home <white>{home}</white>."
+  tp-not-found: "{prefix}<red>{target} has no home named <white>{home}</white>."
+  invalid-amount: "<red>The amount must be a positive number."
+  max-exceeded: "{prefix}<yellow>Capped at the maximum of <white>{maximum}</white> homes."
+  exceeds-kept: "{prefix}<yellow>{target} has homes above the new limit; they are kept but locked until the limit is raised or they are deleted."
+  exceeds-deleted: "{prefix}<yellow>{count} of {target}'s homes above the new limit were deleted."
+
+command:
+  help:
+    - "<gradient:#8B0000:#FF5555><bold>ULTRAS_HOMES</bold></gradient> <gray>by UC_Hussein"
+    - "<yellow>/home <gray>- open the Homes GUI"
+    - "<yellow>/home <name> <gray>- teleport to a home"
+    - "<yellow>/home remove <name> <gray>- delete a home"
+    - "<yellow>/home rest <gray>- delete every home"
+  admin-help:
+    - "<yellow>/home_admin add <player|all> <amount>"
+    - "<yellow>/home_admin set <player|all> <amount>"
+    - "<yellow>/home_admin rest <player|all>"
+    - "<yellow>/home_admin tp <player> [home]"
+    - "<yellow>/home_admin reload"

@@ -1,0 +1,48 @@
+# واجهة الإداري: قائمة هومات لاعب مستهدف (تُفتح عبر /home_admin tp <player>)
+title: "<gradient:#8B0000:#FF5555>ULTRAS HOMES</gradient> <dark_gray>| <gray>{target} <dark_gray>(Page {page})"
+rows: 4
+homes-per-page: 7
+bed-slots: [10, 11, 12, 13, 14, 15, 16]
+dye-slots: [19, 20, 21, 22, 23, 24, 25]
+
+background:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  exclude-slots: [4, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 30, 32, 34]
+
+# رأس اللاعب المستهدف في أعلى الواجهة (يعتمد على player-info في config.yml)
+player-head:
+  slot: 4
+  name: "<yellow>{target}"
+  lore:
+    - "<gray>Status: <white>{online_status}"
+    - "<gray>World: <white>{world}"
+    - "<gray>Coordinates: <white>{x}, {y}, {z}"
+    - "<gray>Homes: <white>{current}/{limit}"
+
+navigation:
+  previous: { slot: 30, material: ARROW, name: "<yellow>« Previous Page", lore: [], sound: UI_BUTTON_CLICK }
+  next: { slot: 34, material: ARROW, name: "<yellow>Next Page »", lore: [], sound: UI_BUTTON_CLICK }
+  close: { slot: 32, material: BARRIER, name: "<red><bold>Close</bold>", lore: [], sound: UI_BUTTON_CLICK }
+
+home:
+  available:
+    bed: { material: GRAY_BED, name: "<gray>Home #{home_number}", lore: ["<gray>Not set"] }
+    dye: { material: GRAY_DYE, name: "<gray>Not set", lore: [] }
+  saved:
+    bed:
+      material: GREEN_BED
+      name: "<green>{home}"
+      lore: ["<gray>World: <white>{world}", "<gray>Coordinates: <white>{x}, {y}, {z}", "", "<yellow>Click to teleport"]
+      sound: BLOCK_NOTE_BLOCK_XYLOPHONE
+    dye:
+      material: GREEN_DYE
+      name: "<green>Manage {home}"
+      lore: ["<yellow>Click to manage (delete / teleport)"]
+      sound: UI_BUTTON_CLICK
+  locked:
+    bed: { material: BLACK_BED, name: "<dark_gray>Locked", lore: [] }
+    dye: { material: BLACK_DYE, name: "<dark_gray>Locked", lore: ["<gray>Required limit: <white>{required_limit}"] }
+
+open-sound: BLOCK_CHEST_OPEN

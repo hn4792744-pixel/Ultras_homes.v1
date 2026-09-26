@@ -1,0 +1,67 @@
+general:
+  no-permission: "<red>ليس لديك صلاحية لاستخدام هذا الأمر."
+  player-only: "<red>هذا الأمر للاعبين فقط."
+  unknown-player: "<red>لا توجد بيانات للاعب <white>{player}</white>."
+  invalid-usage: "<red>الاستخدام: <white>{usage}</white>"
+  world-disabled: "<red>نظام الهومات معطل في هذا العالم."
+  reload-done: "<green>تم إعادة تحميل الإعدادات والرسائل وملفات الواجهة."
+
+home:
+  saved: "{prefix}<green>تم حفظ الهوم <white>{home}</white> بنجاح. <gray>({current}/{limit})"
+  deleted: "{prefix}<yellow>تم حذف الهوم <white>{home}</white>."
+  not-found: "{prefix}<red>الهوم <white>{home}</white> غير موجود."
+  no-homes: "{prefix}<gray>لا توجد لديك هومات محفوظة بعد."
+  limit-reached: "{prefix}<red>لقد وصلت إلى الحد الأقصى من الهومات. <white>({current}/{limit})"
+  locked: "{prefix}<red>هذا السلوت مقفل. الحد المطلوب: <white>{required_limit}"
+  reset-confirm: "{prefix}<red>سيتم حذف جميع هوماتك.</red> <click:run_command:'/home rest confirm'><hover:show_text:'<gray>اضغط للتأكيد'><green><bold>[تأكيد]</bold></green></hover></click> <gray>(تنتهي خلال {seconds} ثانية)"
+  reset-none-pending: "{prefix}<red>لا يوجد شيء لتأكيده (انتهت المهلة). نفذ <white>/home rest</white> مرة أخرى."
+  reset-done: "{prefix}<yellow>تم حذف جميع هوماتك."
+
+teleport:
+  starting: "{prefix}<gray>جاري نقلك إلى <white>{home}</white> خلال <yellow>{delay}s</yellow>... <dark_gray>(لا تتحرك)"
+  countdown: "<yellow>{seconds}"
+  success: "{prefix}<green>تم نقلك إلى <white>{home}</white>."
+  cancelled-move: "{prefix}<red>تم إلغاء النقل - لقد تحركت."
+  cancelled-damage: "{prefix}<red>تم إلغاء النقل - تلقيت ضررًا."
+  cancelled-death: "{prefix}<red>تم إلغاء النقل."
+  cancelled-other: "{prefix}<red>تم إلغاء النقل."
+  already-pending: "{prefix}<red>لديك عملية نقل قيد التنفيذ بالفعل."
+  cooldown: "{prefix}<red>انتظر <white>{remaining}</white> قبل الانتقال مرة أخرى."
+  invalid-location: "{prefix}<red>موقع هذا الهوم لم يعد صالحًا."
+  world-blocked: "{prefix}<red>لا يمكنك الانتقال إلى هوم في عالم معطل."
+
+gui:
+  save-header: "<gray>هوم متاح"
+  manage-header: "<gray>إدارة الهوم"
+  delete-confirm: "{prefix}<yellow>اضغط حذف مرة أخرى للتأكيد."
+  admin-save-disabled: "{prefix}<red>لا يمكن للإداري حفظ هوم للاعب من هذه القائمة."
+
+admin:
+  target-required: "<red>الاستخدام: /home_admin <add|set|rest|tp|reload> <لاعب|all> [عدد]"
+  add-done: "{prefix}<green>تمت زيادة حد {target} بمقدار <white>{amount}</white>: <white>{old} → {new}</white>"
+  add-done-all: "{prefix}<green>تمت زيادة حد <white>{count}</white> لاعب بمقدار <white>{amount}</white>."
+  set-done: "{prefix}<green>تم تعيين حد {target} إلى <white>{new}</white> <gray>(كان {old})"
+  set-done-all: "{prefix}<green>تم تعيين حد <white>{count}</white> لاعب إلى <white>{new}</white>."
+  rest-done: "{prefix}<yellow>تمت إعادة حد {target} إلى الافتراضي <white>({default})</white>."
+  rest-done-all: "{prefix}<yellow>تمت إعادة حد <white>{count}</white> لاعب إلى الافتراضي."
+  rest-homes-deleted: "{prefix}<yellow>تم حذف هومات {target} أيضًا."
+  tp-done: "{prefix}<green>تم نقلك إلى هوم {target} <white>{home}</white>."
+  tp-not-found: "{prefix}<red>لا يملك {target} هومًا باسم <white>{home}</white>."
+  invalid-amount: "<red>يجب أن يكون العدد رقمًا موجبًا."
+  max-exceeded: "{prefix}<yellow>تم التقييد بالحد الأقصى <white>{maximum}</white> هوم."
+  exceeds-kept: "{prefix}<yellow>لدى {target} هومات فوق الحد الجديد؛ تبقى محفوظة لكن مقفلة حتى يُرفع الحد أو تُحذف."
+  exceeds-deleted: "{prefix}<yellow>تم حذف <white>{count}</white> من هومات {target} التي تجاوزت الحد الجديد."
+
+command:
+  help:
+    - "<gradient:#8B0000:#FF5555><bold>ULTRAS_HOMES</bold></gradient> <gray>by UC_Hussein"
+    - "<yellow>/home <gray>- فتح واجهة الهومات"
+    - "<yellow>/home <اسم> <gray>- الانتقال إلى هوم"
+    - "<yellow>/home remove <اسم> <gray>- حذف هوم"
+    - "<yellow>/home rest <gray>- حذف كل الهومات"
+  admin-help:
+    - "<yellow>/home_admin add <لاعب|all> <عدد>"
+    - "<yellow>/home_admin set <لاعب|all> <عدد>"
+    - "<yellow>/home_admin rest <لاعب|all>"
+    - "<yellow>/home_admin tp <لاعب> [هوم]"
+    - "<yellow>/home_admin reload"
